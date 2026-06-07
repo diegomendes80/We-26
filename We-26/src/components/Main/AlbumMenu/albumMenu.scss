@@ -1,0 +1,64 @@
+@use "../../../abstract/var";
+
+.album__menu {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+  .tab-group {
+    display: flex;
+    background-color: var.$color-card;
+    border-radius: 15px;
+    padding: 2px;
+    gap: 0.5rem;
+    width: 330px;
+    border: 1px solid var.$color-border;
+
+    .tab-btn {
+      flex: 1;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      border-radius: 12px;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      border: none;
+      background-color: transparent;
+      color: var.$color-foreground;
+      font-weight: 600;
+      font-size: 17px;
+      font-family: var.$font-body;
+      cursor: pointer;
+      opacity: 0.6;
+
+      &:nth-child(1) {
+        flex: 6;
+      }
+
+      &:nth-child(2) {
+        flex: 4;
+      }
+    }
+
+    .especiais-active {
+      background-color: var.$color-accent;
+      color: var.$color-background;
+      opacity: 1;
+    }
+
+    .selecoes-active {
+      background-color: var.$color-primary;
+      color: var.$color-background;
+      opacity: 1;
+    }
+  }
+}
+
+
+@media(max-width:1000px){
+    .album__menu{
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}
