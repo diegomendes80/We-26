@@ -1,11 +1,10 @@
 @use '../../abstract/var';
 
 .home{
-    position: relative;
-    z-index: 1;
+
 
     width: 40%;
-    margin: 0 auto;
+    margin: 2rem auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -44,7 +43,7 @@
 
 @media(max-width:1000px){
     .home{
-        margin-top: 2rem;
+        // margin-top: 2rem;
         width: 90%;
     }
 }

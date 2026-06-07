@@ -3,4 +3,10 @@
 body{
     background-color: var.$color-background;
     font-family: var.$font-body;
+
+}
+
+main{
+    position: relative;
+    z-index: 1;
 }

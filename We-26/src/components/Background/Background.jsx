@@ -2,7 +2,7 @@ import './background.scss';
 
 export function Background(){
     return (
-        <div>
+        <div className='background'>
             
         </div>
     )

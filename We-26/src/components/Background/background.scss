@@ -1,6 +1,6 @@
 @use "../../abstract/var";
 
-div {
+.background {
   width: 100vw;
   height: 100vh;  
   background:
@@ -14,7 +14,7 @@ div {
 }
 
 @media (max-width: 1000px) {
-  div {
+  .background {
     background:
       linear-gradient(to top, var.$color-background 20%, transparent 100%),
       url("bloob-field-bg-mobile.png");
