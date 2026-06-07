@@ -1,0 +1,32 @@
+@use '../../abstract/var';
+
+
+.header{
+    display: flex;
+    padding: 2rem 3rem;
+    justify-content: right;
+    position:relative;
+    z-index: 1;
+
+    .login-btn{
+        padding: .5rem .8rem;
+        border-radius: 15px;
+        background-color: transparent;
+        border: 1px solid var.$color-accent;
+        color: var.$color-accent;
+        font-family: var.$font-body;
+        font-weight: 600;
+        text-transform: uppercase;
+
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+
+        &:hover{
+            background-color: var.$color-accent;
+            color: var.$color-background;
+        }
+
+    }
+}

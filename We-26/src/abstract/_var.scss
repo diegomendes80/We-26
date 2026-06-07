@@ -1,0 +1,58 @@
+// ==============================
+// Typography
+// ==============================
+
+// Font Families
+$font-body: "Barlow", sans-serif;
+$font-display: "Bebas Neue", sans-serif;
+
+// ==============================
+// Colors
+// ==============================
+
+// Base
+$color-background:   oklch(0.11 0 0);
+$color-card:         oklch(0.15 0 0);
+$color-secondary:    oklch(0.20 0 0);
+$color-muted:        oklch(0.20 0 0);
+$color-border:       oklch(0.26 0 0);
+
+// Foreground
+$color-foreground:   oklch(0.97 0.005 110);
+
+// Brand
+$color-primary:      oklch(0.72 0.18 150);
+$color-accent:       oklch(0.82 0.17 85);
+$color-destructive:  oklch(0.60 0.22 25);
+
+// Teams
+$team-brasil:         #FFCB05;
+$team-argentina:      #75AADB;
+$team-franca:         #2456A6;
+$team-inglaterra:     #CF142B;
+$team-espanha:        #C60B1E;
+$team-alemanha:       #D4A017;
+$team-portugal:       #C8102E;
+$team-holanda:        #FF6900;
+$team-belgica:        #E1A100;
+$team-croacia:        #D52B1E;
+$team-japao:          #BC002D;
+$team-marrocos:       #C1272D;
+$team-canada:         #D52B1E;
+$team-estados-unidos: #3C3B6E;
+$team-mexico:         #006847;
+$team-uruguai:        #5CB8E6;
+
+// ==============================
+// Effects
+// ==============================
+
+$shadow-card:    0 10px 30px -12px oklch(0 0 0 / 0.6);
+$glow-primary:   0 0 36px -6px oklch(0.72 0.18 150 / 0.45);
+$gradient-hero:  linear-gradient(135deg, oklch(0.16 0 0), oklch(0.11 0 0));
+
+// ==============================
+// Layout
+// ==============================
+
+$border-radius-sticker: 1.1rem 0.4rem 1.1rem 0.4rem;

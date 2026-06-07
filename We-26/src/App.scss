@@ -1,0 +1,6 @@
+@use './abstract/var';
+
+body{
+    background-color: var.$color-background;
+    font-family: var.$font-body;
+}
