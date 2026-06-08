@@ -15,7 +15,7 @@ export function EspecialContainer({cards, title, icon, description}) {
             <span className="header__icon">{icon}</span>
             <div className="header__info">
                 <div className="info__title">
-                    <h2>{title}</h2><span className="badge">⭐ FOIL</span>
+                    <h2>{title}</h2><span className="badge">⭐</span>
                 </div>
                 <p className="info__desc">{description}</p>
             </div>
