@@ -4,9 +4,8 @@ import { Sparkles } from 'lucide-react';
 import { Users } from 'lucide-react';
 import { AlbumSearch } from '../Album/AlbumSearch/AlbumSearch';
 
-export function AlbumMenu(){
+export function AlbumMenu({tab, setTab}){
 
-    const [tab, setTab] = useState("especiais");
 
     return (
         <div className="album__menu">

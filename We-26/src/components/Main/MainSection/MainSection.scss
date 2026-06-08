@@ -1,6 +1,7 @@
-
+@use '../../../abstract/var';
 
 .main-section{
     width: 100%;
+    background-color: var.$color-background;
     // padding: 0 3rem;
 }
