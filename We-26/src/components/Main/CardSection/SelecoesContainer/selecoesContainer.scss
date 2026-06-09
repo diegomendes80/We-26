@@ -98,36 +98,16 @@
   
 }
 
-// @media(max-width:1000px){
-//    .selecoes-container{
+@media(max-width:1000px){
+   .selecoes-container{
 
 
-//      .card-container{
-//         margin-top: 1rem;
-//         grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
-//     }
+     .card-container{
+        margin-top: 1rem;
+        grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+    }
 
 
-//     .selecoes-container__header{
-
-//         .header__icon{
-//             font-size: 30px;
-//         }
-
-//         .header__info{
-//             width: 70%;
-          
-//             .info__title{
-//                 h2{
-//                     font-size: 26px;
-//                 }
-
-//             }
-
-//             .info__desc{
-//                 font-size: 14px;
-//             }
-//         }
-//     }
-//    }
-// }
+ 
+   }
+}
