@@ -1,7 +1,12 @@
 @use '../../../../abstract/var';
 
  .card-marked.especial {
-    background-color: var(--cor-dinamica);
+    background-color: var.$color-accent;
+    box-shadow: 0 0 12px color-mix(in oklch, var.$color-accent 40%, transparent);
+}
+
+.card-marked.selecoes{
+     background-color: var(--cor-dinamica);
     box-shadow: 0 0 12px color-mix(in oklch, var(--cor-dinamica) 40%, transparent);
 }
 

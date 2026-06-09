@@ -33,7 +33,7 @@ export const SelecoesContainer = ( {cards,
                     number={value.number}
                     key={index}
                     marked={value.marked}
-                    especial={true}
+                    especial={false}
                     onToggle={() => onToggle(index)}
                     color={color}
                   />

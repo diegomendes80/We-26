@@ -4,7 +4,7 @@ import { Check } from "lucide-react";
 export function Card({ number, marked, especial, onToggle, color }) {
   return (
     <div
-      className={`card ${marked ? "card-marked" : ""} ${especial ? "especial" : ""}`}
+      className={`card ${marked ? "card-marked" : ""} ${especial ? "especial" : "selecoes"}`}
       onClick={onToggle} style={{'--cor-dinamica': color}}
     >
       {marked && <Check size={16} className="marked-icon" />}
