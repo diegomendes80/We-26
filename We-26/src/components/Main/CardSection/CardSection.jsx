@@ -1,8 +1,10 @@
+import { useState } from "react";
 import "./cardSection.scss";
 import { EspecialContainer } from "./EspecialContainer/EspecialContainer";
+import { SelecoesContainer } from "./SelecoesContainer/SelecoesContainer";
 
 export function CardSection({ tab }) {
-  const abertura = [
+  const [abertura, setAbertura] = useState([
     { number: 1, marked: true },
     { number: 2, marked: false },
     { number: 3, marked: true },
@@ -12,9 +14,9 @@ export function CardSection({ tab }) {
     { number: 7, marked: false },
     { number: 8, marked: false },
     { number: 9, marked: false },
-  ];
+  ]);
 
-  const fifaMuseum = [
+  const [fifaMuseum, setFifaMuseum] = useState([
     { number: 1, marked: false },
     { number: 2, marked: true },
     { number: 3, marked: true },
@@ -26,9 +28,9 @@ export function CardSection({ tab }) {
     { number: 9, marked: false },
     { number: 10, marked: false },
     { number: 11, marked: false },
-  ];
+  ]);
 
-  const estadiosSede = [
+  const [estadiosSede, setEstadiosSede] = useState([
     { number: 1, marked: false },
     { number: 2, marked: false },
     { number: 3, marked: false },
@@ -45,15 +47,15 @@ export function CardSection({ tab }) {
     { number: 14, marked: true },
     { number: 15, marked: true },
     { number: 15, marked: true },
-  ];
+  ]);
 
-  const cromos = [
+  const [cromos, setCromos] = useState([
     { number: 1, marked: false },
     { number: 2, marked: false },
     { number: 3, marked: false },
-  ];
+  ]);
 
-  const escudos = [
+  const [escudos, setEscudos] = useState([
     { number: 1, marked: false },
     { number: 2, marked: false },
     { number: 3, marked: true },
@@ -102,12 +104,44 @@ export function CardSection({ tab }) {
     { number: 46, marked: false },
     { number: 47, marked: true },
     { number: 48, marked: false },
-  ];
+  ]);
+
+  const [brasil, setBrasil] = useState([
+    { number: 1, marked: false },
+    { number: 2, marked: false },
+    { number: 3, marked: false },
+    { number: 4, marked: false },
+    { number: 5, marked: false },
+    { number: 6, marked: false },
+    { number: 7, marked: true },
+    { number: 8, marked: false },
+    { number: 9, marked: false },
+    { number: 10, marked: false },
+    { number: 11, marked: false },
+    { number: 12, marked: false },
+    { number: 13, marked: false },
+    { number: 14, marked: true },
+    { number: 15, marked: false },
+    { number: 16, marked: false },
+    { number: 17, marked: false },
+    { number: 18, marked: false }
+  ]);
+
+  function toggleCard(setter, index) {
+    setter((prev) =>
+      prev.map((card, i) => {
+        return i === index ? { ...card, marked: !card.marked } : card;
+      }),
+    );
+  }
 
   if (tab === "especiais") {
     return (
       <section className="card-section">
         <EspecialContainer
+          onToggle={(i) => {
+            toggleCard(setAbertura, i);
+          }}
           cards={abertura}
           title="Abertura"
           icon="✨"
@@ -115,6 +149,9 @@ export function CardSection({ tab }) {
         ></EspecialContainer>
 
         <EspecialContainer
+          onToggle={(i) => {
+            toggleCard(setFifaMuseum, i);
+          }}
           cards={fifaMuseum}
           title="Fifa Museum"
           icon="🏛️"
@@ -122,6 +159,9 @@ export function CardSection({ tab }) {
         ></EspecialContainer>
 
         <EspecialContainer
+          onToggle={(i) => {
+            toggleCard(setEstadiosSede, i);
+          }}
           cards={estadiosSede}
           title="Estádios-Sede"
           icon="🏟️"
@@ -129,6 +169,9 @@ export function CardSection({ tab }) {
         ></EspecialContainer>
 
         <EspecialContainer
+          onToggle={(i) => {
+            toggleCard(setCromos, i);
+          }}
           cards={cromos}
           title="Cromos Institucionais"
           icon="🏆"
@@ -136,11 +179,31 @@ export function CardSection({ tab }) {
         ></EspecialContainer>
 
         <EspecialContainer
+          onToggle={(i) => {
+            toggleCard(setEscudos, i);
+          }}
           cards={escudos}
           title="Escudos das Seleções"
           icon="🛡️"
           description="Emblemas metalizados das 48 seleções classificadas"
         ></EspecialContainer>
+      </section>
+    );
+  }
+
+  if (tab === "selecoes") {
+    return (
+      <section className="card-section">
+        <SelecoesContainer
+          onToggle={(i) => {
+            toggleCard(setBrasil, i);
+          }}
+          cards={brasil}
+          pais={"Brasil"}
+          group={"C"}
+          flag={"🇧🇷"}
+          color={"#FFCB05"}
+        ></SelecoesContainer>
       </section>
     );
   }

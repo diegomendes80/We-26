@@ -12,14 +12,14 @@ export function AlbumMenu({tab, setTab}){
             <div className="tab-group">
                 <button className={`tab-btn ${tab === "especiais" ? "especiais-active" : ""}`}
                     onClick={() => setTab("especiais")}>
-
+                        {/* {console.log(tab)} */}
                         <Sparkles size={16}/>
                         Cartas Especiais
                 </button>
 
                 <button className={`tab-btn ${tab === "selecoes" ? "selecoes-active" : ""}`}
                     onClick={() => setTab("selecoes")}>
-
+                        {/* {console.log(tab)} */}
                         <Users size={16}/>
                         Seleções
                 </button>

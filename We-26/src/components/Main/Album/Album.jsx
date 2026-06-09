@@ -6,7 +6,7 @@ import './album.scss';
 export function Album(){
 
     const [tab, setTab] = useState("especiais");
-
+    
     return (
         <section className="album">
             <AlbumMenu tab={tab} setTab={setTab}></AlbumMenu>

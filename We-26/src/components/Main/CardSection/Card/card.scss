@@ -1,8 +1,8 @@
 @use '../../../../abstract/var';
 
  .card-marked.especial {
-    background-color: var.$color-accent;
-    box-shadow: 0 0 12px color-mix(in oklch, var.$color-accent 40%, transparent);
+    background-color: var(--cor-dinamica);
+    box-shadow: 0 0 12px color-mix(in oklch, var(--cor-dinamica) 40%, transparent);
 }
 
 .card{
@@ -23,11 +23,11 @@
 
     &:hover{
         cursor: pointer;
-        border: 1px dashed var.$color-accent;
+        border: 1px dashed var(--cor-dinamica);
 
 
         .card__number{
-            color: var.$color-accent;
+            color: var(--cor-dinamica);
             opacity: 1;
         }
 
