@@ -3,14 +3,14 @@ import {CardSection} from '../CardSection/CardSection';
 import { useState } from 'react';
 import './album.scss';
 
-export function Album(){
+export function Album({onCountChange}){
 
     const [tab, setTab] = useState("especiais");
     
     return (
         <section className="album">
             <AlbumMenu tab={tab} setTab={setTab}></AlbumMenu>
-            <CardSection tab={tab}></CardSection>
+            <CardSection tab={tab} onCountChange={onCountChange}></CardSection>
         </section>
     )
 }

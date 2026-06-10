@@ -1,21 +1,21 @@
 import './progress.scss';
 
-export function Progress(){
+export function Progress({total, marked}){
     return (
         <div className="progress">
             <div className="progress__display">
                 <div className="coladas">
-                    <p className="coladas__result">0</p>
+                    <p className="coladas__result">{marked}</p>
                     <p className='display-info-name'>Coladas</p>
                 </div>
 
                 <div className="faltam">
-                    <p className="faltam__result">376</p>
+                    <p className="faltam__result">{total - marked}</p>
                     <p className='display-info-name'>Faltam</p>
                 </div>
 
                 <div className="Total">
-                    <p className="total__result">376</p>
+                    <p className="total__result">{total}</p>
                     <p className='display-info-name'>Total</p>
                 </div>
             </div>
@@ -23,7 +23,7 @@ export function Progress(){
             <div className="progress__exibition">
                 <div className="exibition__bar">
                     <div className="bar__info">
-                        <p>Progresso</p> <p>0%</p>
+                        <p>Progresso</p> <p>{(marked/total)*100}</p>
                     </div>
 
                     <div className="bar__div"></div>

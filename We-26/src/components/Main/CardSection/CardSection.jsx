@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./cardSection.scss";
 import { EspecialContainer } from "./EspecialContainer/EspecialContainer";
 import { SelecoesContainer } from "./SelecoesContainer/SelecoesContainer";
 
-export function CardSection({ tab }) {
+export function CardSection({ tab, onCountChange }) {
   const [abertura, setAbertura] = useState([
+    { number: 0, marked: true },
     { number: 1, marked: true },
     { number: 2, marked: false },
     { number: 3, marked: true },
@@ -17,6 +18,7 @@ export function CardSection({ tab }) {
   ]);
 
   const [fifaMuseum, setFifaMuseum] = useState([
+    { number: 0, marked: false },
     { number: 1, marked: false },
     { number: 2, marked: true },
     { number: 3, marked: true },
@@ -53,6 +55,7 @@ export function CardSection({ tab }) {
     { number: 1, marked: false },
     { number: 2, marked: false },
     { number: 3, marked: false },
+    { number: 4, marked: false }
   ]);
 
   const [escudos, setEscudos] = useState([
@@ -457,13 +460,32 @@ export function CardSection({ tab }) {
     );
   }
 
+  
+const allCards = [
+  abertura, fifaMuseum, estadiosSede, cromos, escudos,
+  eua, mexico, canada, brasil, argentina, uruguai, colombia,
+  equador, paraguai, panama, curacao, haiti, inglaterra, franca,
+  alemanha, espanha, portugal, holanda, croacia, noruega, austria,
+  belgica, escocia, suica, italia, turquia, republicaTcheca, suecia,
+  japao, ira, coreiaDoSul, australia, catar, arabiaSaudita, uzbequistao,
+  jordania, iraque, marrocos, algeria, egito, costadoMarfim, tunisia,
+  africaDoSul, gana, senegal, caboVerde, rdCongo, novaZelandia,
+];
+
+const totalCards = allCards.reduce((acc, arr) => acc + arr.length, 0);
+const markedCards = allCards.reduce((acc, arr) => acc + arr.filter(c => c.marked).length, 0);
+
+useEffect (() => {
+  onCountChange({marked: markedCards, total: totalCards});
+}, [markedCards]);
+
   if (tab === "especiais") {
     return (
       <section className="card-section">
         <EspecialContainer
           onToggle={(i) => toggleCard(setAbertura, i)}
           cards={abertura}
-          title="Abertura"
+          title="FWC 2026"
           icon="✨"
           description="Logo Panini, emblema, mascote, slogan, bola e países-sede"
         />
