@@ -23,10 +23,12 @@ export function Progress({total, marked}){
             <div className="progress__exibition">
                 <div className="exibition__bar">
                     <div className="bar__info">
-                        <p>Progresso</p> <p>{(marked/total)*100}</p>
+                        <p>Progresso</p> <p>{Math.round((marked/total)*100)}%</p>
                     </div>
 
-                    <div className="bar__div"></div>
+                    <div className="bar__div"  style={{'--progresso': `${Math.round((marked/total)*100)}%` }}>
+                        <div className="preenchimento"></div>
+                    </div>
                 </div>
 
                 <button className="clear-btn">Limpar</button>
